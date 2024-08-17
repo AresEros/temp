@@ -1,0 +1,52 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Login Page</title><style>body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.container {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0010pxrgba(0, 0, 0, 0.1);
+}
+.hidden {
+    display: none;
+}
+</style>
+</head>
+<body>
+    <div class="container"><div id="login-form"><h2>Login</h2><form id="form"><label for="email">Email:</label><input type="email" id="email" required><br><br><label for="password">Password:</label><input type="password" id="password" required><br><br><button type="submit">Login</button><p id="error-message" class="hidden" style="color: red;"></p></form></div><div id="dashboard" class="hidden"><h2>Dashboard</h2><p>Welcome to your dashboard, <spanid="user-name">
+
+    </span>!</p></div></div>
+    <script>// Sample user dataconstUSER_DATA = {
+    email: 'bruno@gmail.com',
+    password: 'password',
+    name: 'Bruno'
+};
+
+// Handle logindocument.getElementById('form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const errorMessage = document.getElementById('error-message');
+    const loginForm = document.getElementById('login-form');
+    const dashboard = document.getElementById('dashboard');
+    const userName = document.getElementById('user-name');
+
+    if (email === USER_DATA.email && password === USER_DATA.password) {
+        loginForm.classList.add('hidden');
+        dashboard.classList.remove('hidden');
+        userName.textContent = USER_DATA.name;
+    } else {
+        errorMessage.textContent = 'Login details not valid';
+        errorMessage.classList.remove('hidden');
+    }
+});
+</script>
+</body>
+</html>

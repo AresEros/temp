@@ -1,0 +1,40 @@
+# E-Commerce Site with Cart Confirmation Email
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Site</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our E-Commerce Store</h1>
+    </header>
+    <main>
+        <section id="products">
+            <h2>Products</h2>
+            <div class="product">
+                <h3>Product 1</h3>
+                <p>Price: $10.00</p>
+                <button onclick="addToCart('Product 1', 10)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <h3>Product 2</h3>
+                <p>Price: $20.00</p>
+                <button onclick="addToCart('Product 2', 20)">Add to Cart</button>
+            </div>
+        </section>
+        <section id="cart">
+            <h2>Your Cart</h2>
+            <ul id="cart-items"></ul>
+            <button onclick="checkout()">Checkout</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 E-Commerce Store</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
